@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "JEPA-Abstract_Architecture"
+version = "0.0.1"
+authors = [
+  { name="Caleb Cranney", email="caleb.cranney.github@proton.me" },
+]
+description = "Abstract class code for implementing the JEPA architecture"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+]
+
+dependencies = [
+    'torch>=2.1.2',
+]
+
+[project.urls]
+"Homepage" = "https://github.com/CCranney/JEPA-Abstract-Architecture"
+"Bug Tracker" = "https://github.com/CCranney/JEPA-Abstract-Architecture/issues"
