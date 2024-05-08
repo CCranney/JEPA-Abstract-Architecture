@@ -1,0 +1,1 @@
+from abstractjepa.loss.VICRegLoss import VICRegLoss

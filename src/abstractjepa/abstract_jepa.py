@@ -4,11 +4,12 @@ from abc import ABC, abstractmethod
 import copy
 
 class JEPA(nn.Module, ABC):
-    def __init__(self, context_encoder, predictor, loss, target_encoder=None):
-        super(ProposedModelArchitecture, self).__init__()
+    def __init__(self, context_encoder, predictor, loss_calculators=None, target_encoder=None):
+        super(JEPA, self).__init__()
         self.context_encoder = context_encoder
         self.predictor = predictor
-        self.loss = loss
+        if loss_calculators:
+            self.loss_calculators = loss_calculators
         if not target_encoder:
             self.target_encoder = copy.deepcopy(context_encoder)
         else:
@@ -16,6 +17,10 @@ class JEPA(nn.Module, ABC):
 
     @abstractmethod
     def encode_x(self, x):
+        pass
+
+    @abstractmethod
+    def encode_y(self, y):
         pass
 
     @abstractmethod
